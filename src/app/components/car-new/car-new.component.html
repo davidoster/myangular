@@ -1,0 +1,8 @@
+<p>Add new Car</p>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input name="name" title="name" [(ngModel)]="carInstance.name" placeholder="the name"><br>
+    <input name="color" title="color" [(ngModel)]="carInstance.color" placeholder="the color"><br>
+    <input name="price" title="price" [(ngModel)]="carInstance.price"><br>
+    <button type="submit">Submit</button>
+</form>

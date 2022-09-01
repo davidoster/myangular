@@ -1,10 +1,8 @@
-{{ title }}
+<a routerLink="/index">List Of Cars</a>&nbsp;
+<a routerLink="/new">Add a new Car</a>
+<br>
+<p>This is a text that is showed always!!!</p>
+<router-outlet></router-outlet>
+<p>This is the footer!!!!</p>
 
-<p>The car is: {{justACar}}</p>
-<p>Color: {{ colorOfACar.color }}</p>
-<p>Method Result: {{ thisIsAMethod() }}</p>
-<p>Title: <input [value]="title" type="text" (change)="showTitle($event)" (keydown)="showTitle($event)"></p>
-<p>showTitle: {{ changedInput }}</p>
 
-<p [id]="title"> Some text </p>
-<p koukou="xxx">Koukou</p>
