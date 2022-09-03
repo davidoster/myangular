@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Car } from 'src/app/models/car';
+import { CarService } from 'src/app/services/car.service';
 import { CarsListComponent } from '../cars-list/cars-list.component';
 
 
@@ -11,13 +12,19 @@ import { CarsListComponent } from '../cars-list/cars-list.component';
 })
 export class CarNewComponent implements OnInit {
   carInstance: Car = new Car()
-  constructor() { }
+  
+  constructor(private carService: CarService) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {  
   }
 
   onSubmit(f: NgForm) {
+    this.carService.create(this.carInstance).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (e) => console.error(e)
+    });
     console.log(this.carInstance.name, this.carInstance.color, this.carInstance.price);
     console.log(f.valid);  // false
   }
